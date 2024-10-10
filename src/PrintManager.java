@@ -4,6 +4,9 @@ public class PrintManager {
 
     private PrintService printService = new PrintService();
 
+    /*
+    * Inserta un arreglos de impresiones en una cola
+    * */
     public void insertPrintJobs (List<PrintJob> jobs) {
         System.out.println("Insertando impresiones...");
         for(PrintJob job : jobs){
@@ -11,6 +14,9 @@ public class PrintManager {
         }
     }
 
+    /*
+    * Devuelve la impresion en la primera posicion de la cola
+    * */
     public void getPrintJob () {
         PrintJob job = printService.dequeue();
 
@@ -23,6 +29,9 @@ public class PrintManager {
         job.print();
     }
 
+    /*
+    * Imprime todos los elementos de la cola
+    * */
     public void showPrintJobs(){
         printService.showQueue();
     }
